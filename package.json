@@ -1,0 +1,26 @@
+{
+  "name": "brandnew_todo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "pg": "^6.4.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start" : "node server/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CatYanish/BrandNew_ToDo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CatYanish/BrandNew_ToDo/issues"
+  },
+  "homepage": "https://github.com/CatYanish/BrandNew_ToDo#readme"
+}

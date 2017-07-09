@@ -1,0 +1,9 @@
+CREATE TABLE todo(
+	id SERIAL PRIMARY KEY,
+	taskname VARCHAR(100) NOT NULL,
+	details VARCHAR(150) NOT NULL,
+	completed VARCHAR(5)
+);
+
+
+

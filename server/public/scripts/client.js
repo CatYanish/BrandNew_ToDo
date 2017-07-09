@@ -105,15 +105,26 @@ function updateTask(completedTaskId) {
 
 // Function called when delete button is clicked
 function deleteButton() {
-$('#viewTaskList').on('click', '.deleteBtn', function(){
-  console.log('delete button clicked');
-  // We attached the bookid as data on our button
-  var taskId = $(this).data('taskid');
-  console.log(taskId);
-  console.log('Delete book with id of :', taskId);
-  deleteBook(taskId);
-});
-}
+  $('#viewTaskList').on('click', '.deleteBtn', function(){
+      console.log('delete button clicked');
+      var taskId = $(this).data('taskid');
+      console.log(taskId);
+      console.log('Delete book with id of :', taskId);
+
+      $.confirm({
+      title: 'Are you sure you want to delete this task?',
+      content: 'Select a button to confirm',
+      buttons: {
+          confirm: function () {
+            deleteBook(taskId);
+          },
+          cancel: function () {
+              $.alert('Canceled!');
+          },
+      }
+    }); //end of confirm function
+  }); //end delete click listener
+} //end delete click function
 
 // DELETE
 function deleteBook(task) {

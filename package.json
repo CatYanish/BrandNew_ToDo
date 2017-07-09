@@ -5,12 +5,13 @@
   "main": "index.js",
   "dependencies": {
     "body-parser": "^1.17.2",
+    "bootstrap": "^3.3.7",
     "express": "^4.15.3",
     "pg": "^6.4.0"
   },
   "devDependencies": {},
   "scripts": {
-    "start" : "node server/server.js",
+    "start": "node server/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

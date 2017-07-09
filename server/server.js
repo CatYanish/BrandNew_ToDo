@@ -2,9 +2,12 @@ var express = require("express");
 var app = express();
 var path = require("path");
 var port = process.env.PORT || 5000;
-
 var bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({extended: true}));
+var taskRoute = require('./routes/task.js');
+
+
+app.use('/task', taskRoute);
 
 
 app.get('/*', function(req, res) {

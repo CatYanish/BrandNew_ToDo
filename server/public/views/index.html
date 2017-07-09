@@ -2,12 +2,29 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>To DO</title>
+    <title>To Do</title>
     <link rel="stylesheet" href="views/main.css" />
     <script type="text/javascript" src="vendors/jquery.js"></script>
     <script type="text/javascript" src="scripts/client.js"></script>
   </head>
   <body>
-    <h1>HI</h1>
+    <h1>To Do</h1>
+    <div class="createTask">
+      <input type="text" id="task">
+      <input type="text" id="details">
+      <button type="button" id="addTask">Add Task</button>
+    </div>
+    <div class="taskList">
+      <table>
+    <thead>
+      <tr>
+        <th>Task</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody id="viewTaskList">
+    </tbody>
+  </table>
+    </div>
   </body>
 </html>

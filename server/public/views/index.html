@@ -20,34 +20,20 @@
     <div class="header">
       <h1>To Do</h1>
     </div>
-    <form class="form-inline">
-      <div class="form-group">
-        <!-- <label for="usr">Name:</label> -->
-        <input type="text" class="form-control" id="task" placeholder="task name">
-      </div>
-      <div class="form-group">
-        <!-- <label for="pwd">Password:</label> -->
-        <input type="text" class="form-control" id="details" placeholder="details and task notes">
-        <button type="button" id="addTask">Add Task</button>
-      </div>
-    </form>
-
-
-
-
-    <!-- <div class="createTask">
-      <input type="text" id="task">
-      <input type="text" id="details">
-
-    </div> -->
+    <div class="col-md-12">
+      <form class="form-inline" >
+        <div class="form-group">
+          <input type="text" class="form-control" id="task" placeholder="Task name">
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" id="details" placeholder="Details and task notes">
+          <button type="button" id="addTask">Add Task</button>
+        </div>
+      </form>
+    </div>
     <div class="taskList">
       <table class="table">
-        <!-- <thead>
-        <tr>
-        <th>Task</th>
-        <th>Notes</th>
-      </tr>
-    </thead> -->
+    </thead>
     <tbody id="viewTaskList">
     </tbody>
   </table>

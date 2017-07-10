@@ -1,5 +1,5 @@
 body {
-  background-color: #ECECEC;
+    background-color: #Ecf8f8;
 }
 
 .form-inline {
@@ -19,10 +19,12 @@ input {
 
 .header {
   text-align: center;
-  background-color: #F3D250;
+  background-color: #E1eded;
 }
 
 h1 {
+  font-size: 48px;
+  color: #223131;
   padding-top: 20px;
   padding-bottom: 20px;
 }
@@ -34,17 +36,36 @@ table {
 
 
 .complete {
-  background-color: #5DA2d5;
+  background-color: #7CB2B2;
 }
 
 
 .completeBtn{
-  background-color: #F3D250;
+  background-color:#E1EDED;
+
+ border: none;
+ color: #223131;
+ padding: 15px 32px;
+ text-align: center;
+ text-decoration: none;
+ display: inline-block;
+ font-size: 16px;
+}
+
+.container {
+  background-color: #C9e8e8;
 }
 
 
 .deleteBtn {
-  background-color: #F78888;
+ background-color:#E1eded;
+ border: none;
+ color: #223131;
+ padding: 15px 32px;
+ text-align: center;
+ text-decoration: none;
+ display: inline-block;
+ font-size: 16px;
 }
 
 #addTask {
@@ -53,5 +74,6 @@ table {
 }
 
 #viewTaskList {
-  background-color: #90CCf4;
+  background-color: #AEE5e5;
+  color: #223131;
 }

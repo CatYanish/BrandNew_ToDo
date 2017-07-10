@@ -13,20 +13,13 @@ var config = {
 
 
 var pool = new pg.Pool(config);
-// Using a router drops the part of the url used to get here
-// http://localhost:5000/books/ would '/'
 router.get('/', function(req, res){
-  // errorConnecting is bool, db is what we query against,
-  // done is a function that we call when we're done
   pool.connect(function(errorConnectingToDatabase, db, done){
     if(errorConnectingToDatabase) {
       console.log('Error connecting to the database.');
       res.sendStatus(500);
     } else {
-      // We connected to the database!!!
-      // Now we're going to GET things from the db
       var queryText = 'SELECT * FROM "todo";';
-      // errorMakingQuery is a bool, result is an object
       db.query(queryText, function(errorMakingQuery, result){
         done();
         if(errorMakingQuery) {
@@ -34,8 +27,6 @@ router.get('/', function(req, res){
           console.log('Error making query');
           res.sendStatus(500);
         } else {
-          // console.log(result.rows);
-          // Send back the results
           res.send({tasks: result.rows});
         }
       }); // end query
@@ -49,17 +40,13 @@ var pool = new pg.Pool(config);
 
 router.post('/', function(req, res){
   var task = req.body;
-  // console.log(task);
   pool.connect(function(errorConnectingToDatabase, db, done){
     if(errorConnectingToDatabase) {
       console.log('Error connecting to the database.');
       res.sendStatus(500);
     } else {
-      // We connected to the database!!!
       var queryText = 'INSERT INTO "todo" ("taskname", "details")' +
       'VALUES ($1, $2);';
-
-      // errorMakingQuery is a bool, result is an object
       db.query(queryText, [task.taskname, task.details], function(errorMakingQuery, result){
         done();
         if(errorMakingQuery) {
@@ -76,9 +63,9 @@ router.post('/', function(req, res){
 
 
 
-// PUT is similar to POST when using PG
+
 router.put('/', function(req, res){
-  var task = req.body; // Book with updated content
+  var task = req.body;
   console.log('Put route called with book of ', task);
 
   pool.connect(function(errorConnectingToDatabase, db, done){
@@ -86,9 +73,8 @@ router.put('/', function(req, res){
       console.log('Error connecting to the database.');
       res.sendStatus(500);
     } else {
-      // We connected to the database!!!
+
       var queryText = 'UPDATE "todo" SET "completed" = true WHERE id = $1;';
-      // errorMakingQuery is a bool, result is an object
       db.query(queryText, [task.completedTaskId], function(errorMakingQuery, result){
         done();
         if(errorMakingQuery) {
@@ -96,8 +82,6 @@ router.put('/', function(req, res){
           console.log('Error making query');
           res.sendStatus(500);
         } else {
-          // console.log(result);
-          // Send back the results
           res.sendStatus(200);
         }
       }); // end query
@@ -107,18 +91,16 @@ router.put('/', function(req, res){
 
 
 router.delete('/:id', function(req, res){
-  var id = req.params.id; // id of the thing to delete
+  var id = req.params.id;
   console.log('Delete route called with id of', id);
 
-  // YOUR CODE HERE
+
   pool.connect(function(errorConnectingToDatabase, db, done){
     if(errorConnectingToDatabase) {
       console.log('Error connecting to the database.');
       res.sendStatus(500);
     } else {
-      // We connected to the database!!!
       var queryText = 'DELETE FROM "todo" WHERE id = $1;';
-      // errorMakingQuery is a bool, result is an object
       db.query(queryText, [id], function(errorMakingQuery, result){
         done();
         if(errorMakingQuery) {
@@ -126,8 +108,6 @@ router.delete('/:id', function(req, res){
           console.log('Error making query');
           res.sendStatus(500);
         } else {
-          // console.log(result);
-          // Send back the results
           res.sendStatus(200);
         }
       }); // end query

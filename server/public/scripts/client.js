@@ -9,10 +9,10 @@ $('document').ready(function() {
   deleteButton();
 });
 
+//function receives new task data and calls ajax post request
 function clickEvent() {
   $('#addTask').on('click', function() {
     console.log('add task button clicked');
-
     var taskToSend = {
       taskname: $('#task').val(),
       details: $('#details').val()
@@ -22,7 +22,7 @@ function clickEvent() {
   }); //end of click event
 } //end clickEvent function
 
-
+//ajax post new data
 function addTask(taskInfo) {
   $.ajax({
     type: 'POST',
@@ -35,7 +35,7 @@ function addTask(taskInfo) {
   });//end of ajax post
 } //end of addTask function
 
-
+//ajax get request to receive all tasks
 function getTasks(){
   console.log( 'in getTasks' );
   $.ajax({
@@ -51,13 +51,11 @@ function getTasks(){
 
 
 
-
+//append all tasks to DOM
 function appendToDom(tasks) {
-  // Remove koalas that currently exist in the table
   $('#viewTaskList').empty();
   for(var i = 0; i < tasks.length; i += 1) {
     var task = tasks[i];
-    // For each koalas, append a new row to our table
     $tr = $('<tr></tr>');
     $tr.data('tasks', task);
     $tr.append('<td>' + task.taskname + '</td>');
@@ -68,27 +66,23 @@ function appendToDom(tasks) {
     $('#viewTaskList').append($tr);
   }
 }
-
+//this function will visually indicate if a task has been marked complete
 function addClass(taskCompleted){
   if(taskCompleted) {
     $tr.addClass("complete");
   }
 }
 
-
+//clicking complete button will update server
 function completeTask() {
   $('#viewTaskList').on('click', '.completeBtn', function(){
-    console.log('complete');
     var selectedTask = $(this).parent().parent();
     completedTaskId = $(this).data('taskid');
-    console.log(completedTaskId);
-    // console.log(selectedTask);
-    // $(selectedTask).addClass("complete"); //kinda sketchy
-
     updateTask(completedTaskId);
   }); //end of on click function
 }
 
+//ajax put request to update a task to completed
 function updateTask(completedTaskId) {
   $.ajax({
     type: 'PUT',
@@ -109,8 +103,8 @@ function deleteButton() {
     var taskId = $(this).data('taskid');
     console.log(taskId);
     console.log('Delete book with id of :', taskId);
-
-    $.confirm({
+    //this function creates a confirm pop up
+      $.confirm({
       title: 'Are you sure you want to delete this task?',
       content: 'Select a button to confirm',
       buttons: {
@@ -127,8 +121,6 @@ function deleteButton() {
 
 // DELETE
 function deleteBook(task) {
-  // When using URL params, your url would be...
-  // '/books/' + bookId
   $.ajax({
     type: 'DELETE',
     url: '/task/' + task,
@@ -137,4 +129,4 @@ function deleteBook(task) {
       getTasks();
     }
   }); //end of ajax function
-} //end of deleteBook function
+} //end of delete function

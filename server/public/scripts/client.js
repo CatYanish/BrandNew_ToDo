@@ -103,7 +103,7 @@ function deleteButton() {
     var taskId = $(this).data('taskid');
     console.log(taskId);
     console.log('Delete book with id of :', taskId);
-    //this function creates a confirm pop up
+    //this function creates a confirm pop up, using third party library
       $.confirm({
       title: 'Are you sure you want to delete this task?',
       content: 'Select a button to confirm',

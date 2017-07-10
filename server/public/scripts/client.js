@@ -10,16 +10,16 @@ $('document').ready(function() {
 });
 
 function clickEvent() {
-$('#addTask').on('click', function() {
-  console.log('add task button clicked');
+  $('#addTask').on('click', function() {
+    console.log('add task button clicked');
 
-  var taskToSend = {
-  taskname: $('#task').val(),
-  details: $('#details').val()
-  };
-  console.log('task to send is: ', taskToSend);
-  addTask(taskToSend);
-}); //end of click event
+    var taskToSend = {
+      taskname: $('#task').val(),
+      details: $('#details').val()
+    };
+    console.log('task to send is: ', taskToSend);
+    addTask(taskToSend);
+  }); //end of click event
 } //end clickEvent function
 
 
@@ -44,7 +44,7 @@ function getTasks(){
     success: function( response ){
       console.log( 'got some tasks: ', response );
       console.log('response.tasks: ', response.tasks);
-        appendToDom(response.tasks);
+      appendToDom(response.tasks);
     } // end success
   }); //end ajax
 } // end getTasks
@@ -61,11 +61,10 @@ function appendToDom(tasks) {
     $tr = $('<tr></tr>');
     $tr.data('tasks', task);
     $tr.append('<td>' + task.taskname + '</td>');
-    $tr.append('<td>' + task.details +'</td>');
-    $tr.append('<td><button class="deleteBtn" data-taskid="' + task.id + '">Delete</button></td>');
-    console.log(task.completed);
-    addClass(task.completed);
+    $tr.append('<td>' + task.details + '</td>');
     $tr.append('<td><button class="completeBtn" data-taskid="' + task.id + '">Mark as Completed</button></td>');
+    $tr.append('<td><button class="deleteBtn" data-taskid="' + task.id + '">Delete</button></td>');
+    addClass(task.completed);
     $('#viewTaskList').append($tr);
   }
 }
@@ -92,35 +91,35 @@ function completeTask() {
 
 function updateTask(completedTaskId) {
   $.ajax({
-     type: 'PUT',
-     url: '/task',
-        data: {completedTaskId: completedTaskId },
-        success: function(response) {
-          console.log(response);
-        }
+    type: 'PUT',
+    url: '/task',
+    data: {completedTaskId: completedTaskId },
+    success: function(response) {
+      console.log(response);
+    }
   });
-  // getTasks();
+  getTasks();
 }
 
 
 // Function called when delete button is clicked
 function deleteButton() {
   $('#viewTaskList').on('click', '.deleteBtn', function(){
-      console.log('delete button clicked');
-      var taskId = $(this).data('taskid');
-      console.log(taskId);
-      console.log('Delete book with id of :', taskId);
+    console.log('delete button clicked');
+    var taskId = $(this).data('taskid');
+    console.log(taskId);
+    console.log('Delete book with id of :', taskId);
 
-      $.confirm({
+    $.confirm({
       title: 'Are you sure you want to delete this task?',
       content: 'Select a button to confirm',
       buttons: {
-          confirm: function () {
-            deleteBook(taskId);
-          },
-          cancel: function () {
-              $.alert('Canceled!');
-          },
+        confirm: function () {
+          deleteBook(taskId);
+        },
+        cancel: function () {
+          $.alert('Canceled!');
+        },
       }
     }); //end of confirm function
   }); //end delete click listener

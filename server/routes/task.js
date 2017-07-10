@@ -57,7 +57,7 @@ router.post('/', function(req, res){
     } else {
       // We connected to the database!!!
       var queryText = 'INSERT INTO "todo" ("taskname", "details")' +
-                      'VALUES ($1, $2);';
+      'VALUES ($1, $2);';
 
       // errorMakingQuery is a bool, result is an object
       db.query(queryText, [task.taskname, task.details], function(errorMakingQuery, result){

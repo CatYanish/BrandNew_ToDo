@@ -1,37 +1,57 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>To Do</title>
-    <!-- Link to bootstrap, and jquery -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <script type="text/javascript" src="vendors/jquery.js"></script>
-    <!-- the link and script below are for alert button style libraries -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.2.3/jquery-confirm.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.2.3/jquery-confirm.min.js"></script>
-    <!--link to main css and client.js  -->
-    <link rel="stylesheet" href="views/main.css" />
-    <script type="text/javascript" src="scripts/client.js"></script>
-  </head>
-  <body>
-    <h1>To Do</h1>
-    <div class="createTask">
+<head>
+  <meta charset="utf-8">
+  <title>To Do</title>
+  <!-- Link to bootstrap, and jquery -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+  integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script type="text/javascript" src="vendors/jquery.js"></script>
+  <!-- the link and script below are for alert button style libraries -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.2.3/jquery-confirm.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.2.3/jquery-confirm.min.js"></script>
+  <!--link to main css and client.js  -->
+  <link rel="stylesheet" href="views/main.css" />
+  <script type="text/javascript" src="scripts/client.js"></script>
+</head>
+<body>
+  <div class="container">
+
+    <div class="header">
+      <h1>To Do</h1>
+    </div>
+    <form class="form-inline">
+      <div class="form-group">
+        <!-- <label for="usr">Name:</label> -->
+        <input type="text" class="form-control" id="task" placeholder="task name">
+      </div>
+      <div class="form-group">
+        <!-- <label for="pwd">Password:</label> -->
+        <input type="text" class="form-control" id="details" placeholder="details and task notes">
+        <button type="button" id="addTask">Add Task</button>
+      </div>
+    </form>
+
+
+
+
+    <!-- <div class="createTask">
       <input type="text" id="task">
       <input type="text" id="details">
-      <button type="button" id="addTask">Add Task</button>
-    </div>
+
+    </div> -->
     <div class="taskList">
-      <table>
-    <thead>
-      <tr>
+      <table class="table">
+        <!-- <thead>
+        <tr>
         <th>Task</th>
         <th>Notes</th>
       </tr>
-    </thead>
+    </thead> -->
     <tbody id="viewTaskList">
     </tbody>
   </table>
-    </div>
-  </body>
+</div>
+</div>
+</body>
 </html>

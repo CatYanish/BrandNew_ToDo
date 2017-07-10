@@ -17,7 +17,7 @@ X Whether or not a task is complete should also be stored in the
 
 HARD MODE
 
-In whatever fashion you would like, create an 'are you sure: yes / no' option when deleting a task. Once again, you can interrupt this however you would like.
+ [X] In whatever fashion you would like, create an 'are you sure: yes / no' option when deleting a task. Once again, you can interrupt this however you would like.
 
 PRO MODE
 

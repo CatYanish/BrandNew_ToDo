@@ -1,8 +1,57 @@
-h1 {
-  background-color: coral;
+body {
+  background-color: #ECECEC;
+}
+
+.form-inline {
+  margin: 0 auto;
+  width: 100%;
+}
+
+.form-group {
+  text-align: center;
+}
+
+input {
+  text-align: center;
+  font-size: 20px;
 }
 
 
+.header {
+  text-align: center;
+  background-color: #F3D250;
+}
+
+h1 {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+table {
+  font-size: 18px;
+}
+
+
+
 .complete {
-  background-color: coral; 
+  background-color: #5DA2d5;
+}
+
+
+.completeBtn{
+  background-color: #F3D250;
+}
+
+
+.deleteBtn {
+  background-color: #F78888;
+}
+
+#addTask {
+  padding: 5px;
+  margin: 10px;
+}
+
+#viewTaskList {
+  background-color: #90CCf4;
 }

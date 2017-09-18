@@ -1,26 +1,49 @@
-# BrandNew_ToDo
+
+# To Do App
+
+This full stack to do app allows a user to create tasks, mark tasks as completed, and delete tasks. 
+
+## Getting Started
+
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. 
+
+### Prerequisites
+- node package manager
+- Node.js
+- Express
+- PostgreSQL
+- Postico
+
+```
+Give examples
+```
+
+### Installing
+
+In Terminal, git clone this reposity, and $ npm install to install dependences. 
+
+Create the postgreSQL table. You can copy and paste the commands from CreateTable.sql file of the project, included in the repository.
+
+When ready, you can run $ npm start to start the server, and go to Localhost for testing. 
 
 
 
-[X]  Create a front end that allows a user to create a task.
 
-[X] When the task is created, it should be stored inside of a
-      database (SQL)
+## Built With
 
-[X]  Whenever a task is created the front end should refresh to show
-    all tasks that need to be completed.
+This is a full-stack to do app built with jQuery, Express, Node.js, and PostgreSQL. It is styled with Bootstrap and jQuery confirm (https://craftpip.github.io/jquery-confirm/)
 
-[X]  Each task should have an option to 'Complete' or 'Delete'.
+## Authors
 
-[X]    When a task is complete, its visual representation should change on the front end (for example, the background of the task container could change from gray to green, as well as the complete option 'checked off'. Each of these are accomplished in CSS, but will need to hook into logic to know whether or not the task is complete)
+* **Catherine Yanish** 
 
-[X] Whether or not a task is complete should also be stored in the
-   database.
 
-[X] Deleting a task should remove it both from the Front End as well as the Database.
+## License
 
-[X]include some way to recreate your initial database schema.
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
-[X] STYLE IT OUT!
+## Acknowledgments
 
-[X] In whatever fashion you would like, create an 'are you sure: yes / no' option when deleting a task. Once again, you can interrupt this however you would like.
+* Thank you to Prime Digital Academy for instruction in full stack development and for being available for questions during the building of this app. 
+
+

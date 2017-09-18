@@ -14,20 +14,24 @@ These instructions will get you a copy of the project up and running on your loc
 - PostgreSQL
 - Postico
 
-```
-Give examples
-```
+
 
 ### Installing
 
-In Terminal, git clone this reposity, and $ npm install to install dependences. 
+In Terminal, git clone this reposity. Then, use npm install to install dependences.
 
-Create the postgreSQL table. You can copy and paste the commands from CreateTable.sql file of the project, included in the repository.
+```
+$ npm install
+```
 
-When ready, you can run $ npm start to start the server, and go to Localhost for testing. 
 
+Next, you will need to create the postgreSQL table. You can use Postico to get the database up and running. You can copy and paste the commands from CreateTable.sql file of the project, included in the repository.
 
+When ready, you can run $ npm start to start the server, and go to localhost for testing. 
 
+```
+$ npm start 
+```
 
 ## Built With
 
